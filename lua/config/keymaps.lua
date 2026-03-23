@@ -151,8 +151,11 @@ map("n", "<C-p>", function() Snacks.picker.files() end, { desc = "Find files" })
 -- Search in file (Ctrl+f)
 map("n", "<C-f>", "/", { desc = "Search in file" })
 
--- Find in files / grep (Ctrl+Shift+f)
+-- Find in files / grep (Ctrl+Shift+f / <leader>s → global search like VS Code)
+-- Note: Most terminals can't distinguish Ctrl+Shift+F from Ctrl+F.
+-- Use <leader>s as the reliable alternative for global grep search.
 map("n", "<C-S-f>", function() Snacks.picker.grep() end, { desc = "Find in files" })
+map("n", "<leader>s", function() Snacks.picker.grep() end, { desc = "Find in files" })
 
 -- New file (Ctrl+n)
 map("n", "<C-n>", "<cmd>enew<cr>", { desc = "New file" })
